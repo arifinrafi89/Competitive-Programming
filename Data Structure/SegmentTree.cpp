@@ -15,7 +15,6 @@ private:
 		}
 		return;
 	}
-
 	void update(ll node, ll start, ll end, ll idx, ll val) {
 		if (start == end) {
 			tree[node] += val;
@@ -46,13 +45,11 @@ private:
 			sum += query(2 * node + 1, start, mid, l, r);
 			sum += query(2 * node + 2, mid + 1, end, l, r);
 			return sum;
-
 		}
 		return 0;
 	}
 
 public:
-
 	SegmentTree(vector<ll> &v) {
 		n = v.size();
 		tree.resize(4 * n);

@@ -1,14 +1,20 @@
-bool isPrime[1000001];
-
-void sieve() {
-    for (ll i = 0; i <= 1000000; i++) isPrime[i] = true;
-    isPrime[0] = isPrime[1] = false;
-    for (ll i = 4; i <= 1000000; i += 2) isPrime[i] = false;
-    for (ll i = 3; i <= 1000000; i += 2) {
-        if (isPrime[i]) {
-            for (ll j = i * i; j <= 1000000; j += i) {
-                isPrime[j] = false;
+class SievePrime {
+private:
+    vector<bool> prime;
+public:
+    SievePrime(ll n) {
+        prime.assign(n + 1, true);
+        prime[0] = prime[1] = false;
+        for (ll i = 2; i <= n; i++) {
+            if (prime[i]) {
+                for (ll j = i * 2; j <= n; j += i)
+                    prime[j] = false;
             }
         }
     }
-}
+
+    bool isPrime(ll x) {
+        return prime[x];
+    }
+
+};

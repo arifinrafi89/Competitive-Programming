@@ -21,7 +21,6 @@ const ll N = 2500;
 
 
 void solve() {
-
     
 }
   

@@ -20,8 +20,7 @@ public:
         n = mat.size();
         m = mat[0].size();
         tree.assign(n + 1, vector<ll> (m + 1, 0));
-        for (ll i = 1; i 
-            <= n; i++)
+        for (ll i = 1; i <= n; i++)
             for (ll j = 1; j <= m; j++)
                 update(i, j, mat[i - 1][j - 1]);
     }
